@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- permisos segundo plano / acceso a internet / funcionar al reiniciar -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_LAUNCH_BROADCASTS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/incal_round"
+        android:label="Incal - Mediciones de Calidad"
+        android:roundIcon="@mipmap/incal_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IncalDesviaciones">
+
+        <activity android:name=".Login"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MedicionesCalidad"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".TestDialog"
+            android:label="J Test Diajog" />
+        <activity
+            android:name=".VistaDesviaciones"
+            android:label="Control de Desviaciones" />
+
+
+        <!-- propiedades para levantar con reinicio -->
+        <receiver
+            android:name=".MyBootReceiver"
+            android:label="IniciarMyBootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- propiedades para levantar en segundo plano -->
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service android:name=".JobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver
+            android:name=".RestartServiceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="StartMyServiceAtBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="uk.ac.shef.oak.activity_recognition.sensor_service.RestartSensor"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+
+
+    </application>
+
+</manifest>

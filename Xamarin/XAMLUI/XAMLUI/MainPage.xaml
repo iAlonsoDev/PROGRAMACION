@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XAMPLUI.ViewModel"
+             x:Class="XAMLUI.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="xamarinicon" BackgroundColor="#1E27F5"
+                Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"/>
+
+        <Editor Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" 
+                Placeholder="Enter Note" Margin="10,10"
+                Text="{Binding TheNote}"/>
+
+        <Button Grid.Row="2" Grid.Column="1" Text="Guardar" BackgroundColor="#5984C8" TextColor="White"
+                Command="{Binding SaveCommand}"/>
+
+        <Button Grid.Row="2" Grid.Column="2" Text="Borrar" BackgroundColor="#FF3C3C" TextColor="White"
+                Command="{Binding EraseCommand}"/>
+
+        <CollectionView ItemsSource="{Binding AllNotes}" Grid.Row="3" Grid.ColumnSpan="4">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame>
+                            <Label Text="{Binding .}" FontSize="Medium"/>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>
+

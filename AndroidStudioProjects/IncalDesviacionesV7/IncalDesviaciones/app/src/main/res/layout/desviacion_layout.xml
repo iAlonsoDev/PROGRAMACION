@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="desviacion"
+            type="com.example.incaldesviaciones.Desviacion" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="25dp">
+
+            <RelativeLayout
+                android:id="@+id/indicador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tvwProceso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@{desviacion.proceso}"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    tools:text="Proceso de Medición " />
+
+                <TextView
+                    android:id="@+id/tvwParametro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvwProceso"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@{desviacion.parametro}"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:text="Parámetro Desviado" />
+
+                <TextView
+                    android:id="@+id/tvwDetalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvwParametro"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@{desviacion.detalle}"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textSize="12sp"
+                    tools:text="Fecha, Corrección y Tiempo Estimado" />
+
+                <TextView
+                    android:id="@+id/tvwResultado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvwDetalle"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@{desviacion.puntuacion}"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+                    android:textStyle="bold"
+                    tools:text="4.7" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="57dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="4dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btninicar2"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:backgroundTint="#4E525B"
+                        android:elevation="0dp"
+                        android:tint="@android:color/white"
+                        tools:ignore="RelativeOverlap"
+                        android:contentDescription="TODO" />
+
+                    <TextView
+                        android:id="@+id/tvwCnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="11dp"
+                        android:text="@{desviacion.cnt}"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="0" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
