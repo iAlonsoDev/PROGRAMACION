@@ -1,0 +1,5 @@
+28-Jul-2021
+* Se agrega contador de repeticiones por desviación.
+* Se crea nuevo tipo de usuario supervisor con permisos unicamente de visualización.
+* Se modifican las alertas, personalización del texto mostrado, se incluyen los resultados de cada desviación y 
+el parámetro que ha sido desviado.

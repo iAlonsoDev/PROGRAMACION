@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Incal Desviaciones</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="dialog_title">Fire Dialog</string>
+    <string name="guardar">GUARDAR</string>
+    <string name="cancel">CANCELAR</string>
+
+    <string-array name="arrProcesos">
+        <item>Trituración</item>
+        <item>Materiales No Calcinados</item>
+        <item>Biomasa</item>
+        <item>Calcinación</item>
+        <item>Hidratación</item>
+    </string-array>
+
+    <string-array name="arrParametros">
+        <item>%CaCO3 en Piedra</item>
+        <item>---------------</item>
+        <item>% Finos Carbonatos 2-4 mm</item>
+        <item>% Finos Carbonatos 0.85-2 mm</item>
+        <item>% Humedad salida del Secador</item>
+        <item>% CaCO3 Pulverizado</item>
+        <item>% Retenido Malla 325</item>
+        <item>% Retenido Malla 200</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

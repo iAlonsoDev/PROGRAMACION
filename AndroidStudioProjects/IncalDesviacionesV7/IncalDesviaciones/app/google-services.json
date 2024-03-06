@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "922424141325",
+    "project_id": "alonsodev-59063",
+    "storage_bucket": "alonsodev-59063.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922424141325:android:0ba0c2f9a8334eecfd9744",
+        "android_client_info": {
+          "package_name": "com.example.incaldesviaciones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922424141325-kk8ukq22qphvtam0uncs87j7evooua3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDttZ9BtpHMhSmSsUSKClhs-zSnU-7Olw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922424141325-kk8ukq22qphvtam0uncs87j7evooua3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
